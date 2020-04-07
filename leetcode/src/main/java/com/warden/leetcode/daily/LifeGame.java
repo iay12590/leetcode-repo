@@ -15,6 +15,27 @@ public class LifeGame {
 	private static final int[] DX = {0, 0, 1, 1, 1, -1, -1, -1};
 	private static final int[] DY = {-1, 1, -1, 0, 1, -1, 0, 1};
 
+	public static void main(String[] args) {
+		/**
+		 * 输入：
+		 [
+		 [0,1,0],
+		 [0,0,1],
+		 [1,1,1],
+		 [0,0,0]
+		 ]
+		 输出：
+		 [
+		 [0,0,0],
+		 [1,0,1],
+		 [0,1,1],
+		 [0,1,0]
+		 ]
+		 */
+		int[][] board = {{0, 1, 0}, {0, 0, 1}, {1, 1, 1}, {0, 0, 0}};
+		new LifeGame().gameOfLife(board);
+	}
+
 	public void gameOfLife(int[][] board) {
 		int xL = board.length;
 		int yL = board[0].length;
