@@ -52,9 +52,6 @@ public class RightSideView {
 		}
 		return result;
 	}
-
-
-
 }
 
 class TreeNode {
