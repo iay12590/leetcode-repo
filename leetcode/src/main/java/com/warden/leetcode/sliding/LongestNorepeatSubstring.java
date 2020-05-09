@@ -29,9 +29,10 @@ public class LongestNorepeatSubstring {
             } else {
                 while (left < right) {
                     char r1 = s.charAt(left++);
-                    window.remove(r1);
                     if (r1 == c) {
                         break;
+                    } else {
+                        window.remove(r1);
                     }
                 }
             }
