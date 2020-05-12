@@ -1,4 +1,4 @@
-package com.warden.leetcode.dp2;
+package com.warden.leetcode.dp;
 
 /**
  * @author JianHua.Lin
