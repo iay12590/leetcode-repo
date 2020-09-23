@@ -1,14 +1,24 @@
 package com.warden.leetcode.dp;
 
+import java.util.regex.Pattern;
+
 /**
  * Created by Administrator on 2020/5/2 0002.
  */
 public class FullKnapsack {
 
     public static void main(String[] args) {
-        int amount = 0;
-        int[] coins = {};
-        System.out.println(new FullKnapsack().stateCompress(amount, coins));
+        //字符串"+100"、"5e2"、"-123"、"3.1416"、"-1E-16"、"012
+//3"都表示数值，但"12e"、"1a3.14"、"1.2.3"、"+-5"及"12e+5.4"都不是。
+        String reg = "^[+-]?\\d*(\\.\\d+)?(\\d+[Ee][+-]?\\d+)?$";
+
+        Pattern p = Pattern.compile(reg);
+        boolean b = p.matcher("e9").find();
+        System.out.println(b);
+
+//        int amount = 0;
+//        int[] coins = {};
+//        System.out.println(new FullKnapsack().stateCompress(amount, coins));
     }
 
     public int fullKnapsack(int amount, int[] coins) {
@@ -31,14 +41,17 @@ public class FullKnapsack {
     }
 
     public int stateCompress(int amount, int[] coins) {
+
+
+
         int[] dp = new int[amount + 1];
         dp[0] = 1;
-        for (int i = 0; i <  coins.length; i++) {
+        for (int coin : coins) {
             for (int j = 1; j <= amount; j++) {
-                if (j - coins[i] < 0) {
+                if (j - coin < 0) {
                     dp[j] = dp[j];
                 } else {
-                    dp[j] = dp[j] + dp[j - coins[i]];
+                    dp[j] = dp[j] + dp[j - coin];
                 }
             }
         }

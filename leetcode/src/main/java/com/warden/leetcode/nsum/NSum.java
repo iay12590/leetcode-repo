@@ -14,12 +14,12 @@ import java.util.List;
 public class NSum {
 
 	public static void main(String[] args) {
-		int[] nums  = {1, 4,45,5,5,7,8,5,3,1};
-		List<int[]> res = new NSum().nsum(nums, 9, 4);
+		int[] nums  = {0,0,0};
+		List<int[]> res = new NSum().nsum(nums, 0, 3);
 		res.forEach(arr -> System.out.println(Arrays.toString(arr)));
 	}
 
-	public List<int[]> nsum(int[] nums, int target, int n) {
+	private List<int[]> nsum(int[] nums, int target, int n) {
 		Arrays.sort(nums);
 		List<LinkedList<Integer>> temp = nsum(nums, 0, target, n);
 		if (temp == null) {
@@ -36,10 +36,10 @@ public class NSum {
 		return res;
 	}
 
-	public List<LinkedList<Integer>> nsum(int[] nums, int start, int target, int n) {
+	private List<LinkedList<Integer>> nsum(int[] nums, int start, int target, int n) {
 		int lo = start;
 		int hi = nums.length - 1;
-		if (hi - lo < n || n < 2) {
+		if (hi - lo < n - 1|| n < 2) {
 			return  null;
 		}
 		if (n == 2) {
@@ -62,7 +62,7 @@ public class NSum {
 		return res;
 	}
 
-	public List<LinkedList<Integer>> twoSum(int[] nums, int start, int target) {
+	private List<LinkedList<Integer>> twoSum(int[] nums, int start, int target) {
 		int lo = start;
 		int hi = nums.length - 1;
 		List<LinkedList<Integer>> res = new ArrayList<>();

@@ -1,5 +1,6 @@
 package com.warden.leetcode.trackback;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class NEmpress {
 				System.out.println(str);
 			}
 		}
+		List<String> temp = new ArrayList<>();
 	}
 
 	public List<List<String>> nEmpress(int n) {
