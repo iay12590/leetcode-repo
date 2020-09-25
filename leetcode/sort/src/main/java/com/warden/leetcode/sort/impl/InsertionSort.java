@@ -24,9 +24,13 @@ public class InsertionSort extends AbstractSort {
 
 	@Override
 	public Comparable[] sort(Comparable[] arr) {
-		int len = arr.length;
-		for (int i = 1; i < len; i++) {
-			for (int j = i; j >= 1; j--) {
+		return sort(arr, 0, arr.length - 1);
+	}
+
+
+	public Comparable[] sort(Comparable[] arr, int lo, int hi) {
+		for (int i = lo + 1; i < hi + 1; i++) {
+			for (int j = i; j >= lo + 1; j--) {
 				if (SortUtils.less(arr[j-1], arr[j])) {
 					SortUtils.exch(arr, j-1, j);
 				} else {

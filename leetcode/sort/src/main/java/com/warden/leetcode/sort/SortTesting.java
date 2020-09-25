@@ -1,7 +1,9 @@
 package com.warden.leetcode.sort;
 
+import com.warden.leetcode.sort.impl.AdvanceQuickSort;
 import com.warden.leetcode.sort.impl.InsertionSort;
 import com.warden.leetcode.sort.impl.MergeSort;
+import com.warden.leetcode.sort.impl.QuickSort;
 import com.warden.leetcode.sort.impl.ShellSort;
 import com.warden.leetcode.sort.util.SortUtils;
 
@@ -16,13 +18,13 @@ import java.util.List;
 public class SortTesting {
 
 	public static void main(String[] args) {
-		Sort s1 = new ShellSort(15000);
-		Sort s2 = new InsertionSort(15000);
-		Sort s3 = new MergeSort(15000);
+//		Sort s1 = new ShellSort(15000000);
+//		Sort s4 = new QuickSort(15000000);
+		Sort s5 = new AdvanceQuickSort(15000000);
 		List<Sort> list = new ArrayList<>(2);
-		list.add(s1);
-		list.add(s2);
-		list.add(s3);
+//		list.add(s1);
+//		list.add(s4);
+		list.add(s5);
 		test(list, 5);
 	}
 
